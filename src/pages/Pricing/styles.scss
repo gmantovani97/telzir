@@ -1,6 +1,18 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
 
-div {
+.container {
   flex: 1;
+  padding: 1.25rem;
+
+  h1 {
+    align-self: center;
+    font-weight: 300;
+  }
+
+  h4 {
+    align-self: center;
+    margin-top: 1.25rem;
+    color: $grey;
+  }
 }

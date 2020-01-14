@@ -1,22 +1,115 @@
 @import '../../styles/variables.scss';
 
-.container {
-  max-height: 4rem;
-  background: $white;
+.header {
   flex-direction: row;
   justify-content: space-between;
-  padding: $base_padding;
+  height: 3.75rem;
+  padding: 0 1.25rem;
   align-items: center;
-
   h1 {
     color: $primary-color;
   }
 }
 
-.menu-container {
-  justify-content: flex-end;
+@keyframes onhoverbutton {
+  from {
+    box-shadow: 0 0 0.3125rem $grey;
+  } to {
+    box-shadow: 0 0 0.625rem $grey;
+  }
 }
 
-.menu-button {
-  background: $secondary-color;
+@keyframes onhovergetstarted {
+  from {
+    box-shadow: 0 0 0.3125rem $primary-color;
+  } to {
+    box-shadow: 0 0 0.625rem $primary-color;
+  }
+}
+
+@keyframes onhovermenuitem {
+  from {
+    color: $black;
+  } to {
+    color: $primary-color;
+  }
+}
+
+.menu {
+  flex-direction: row;
+  justify-content: flex-end;
+
+  &__button {
+    padding: 0.625rem;
+    margin: 0.625rem;
+    cursor: pointer;
+
+    p {
+      font-weight: 500;
+    }
+
+    &--selected {
+      border-bottom: 0.125rem solid $primary-color;
+      p {
+        font-weight: 600;
+      }
+    }
+
+    &:hover {
+      p {
+        animation: onhovermenuitem 200ms forwards;
+      }
+    }
+
+  }
+
+  &__getstarted {
+    padding: 0.625rem;
+    margin: 0.625rem;
+    cursor: pointer;
+    background: $primary-color;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3125rem;
+    box-shadow: 0 0 0.3125rem $primary-color;
+
+    &:hover {
+      animation: onhovergetstarted 200ms forwards;
+      p {
+        animation: onhover 200ms forwards;
+      }
+    }
+
+    p {
+      color: $white;
+      font-weight: 700;
+    }
+  }
+
+  &__login {
+    padding: 0.625rem;
+    margin: 0.625rem;
+    background: $white;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 0.3125rem $grey;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+
+    svg {
+      fill: $grey;
+      width: 1.25rem;
+      margin-right: 0.3125rem;
+    }
+
+    p {
+      font-weight: 700;
+      color: $dark;
+    }
+
+    &:hover {
+      animation: onhoverbutton 500ms forwards;
+    }
+  }
 }
