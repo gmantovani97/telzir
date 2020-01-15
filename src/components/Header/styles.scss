@@ -7,7 +7,7 @@
   padding: 0 1.25rem;
   align-items: center;
   h1 {
-    color: $primary-color;
+    color: $secondary-color;
   }
 }
 
@@ -67,11 +67,11 @@
     padding: 0.625rem;
     margin: 0.625rem;
     cursor: pointer;
-    background: $primary-color;
+    background: $secondary-color;
     justify-content: center;
     align-items: center;
     border-radius: 0.3125rem;
-    box-shadow: 0 0 0.3125rem $primary-color;
+    box-shadow: 0 0 0.3125rem $secondary-color;
 
     &:hover {
       animation: onhovergetstarted 200ms forwards;

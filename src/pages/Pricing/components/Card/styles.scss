@@ -1,0 +1,119 @@
+@import '../../../../styles/mixins.scss';
+@import '../../../../styles/variables.scss';
+
+.card {
+  padding: 1.25rem;
+  margin: 0 2.5rem;
+
+  &--best {
+    padding: 1.25rem;
+    border: 0.125rem solid $primary-dark;
+  }
+}
+
+.flag {
+  align-self: center;
+  padding: 0.3125rem;
+  height: 1.625rem;
+  border-radius: 0.8125rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-color;
+
+  &__icon {
+    height: 1.25rem;
+    fill: $white;
+  }
+
+  &__text {
+    font-weight: 600;
+    color: $white;
+  }
+}
+
+
+.image {
+  height: 4rem;
+}
+
+.title {
+  align-self: center;
+  margin: 1.25rem 0;
+  letter-spacing: 0.0625rem;
+  font-weight: 500;
+  color: $secondary-dark;
+}
+
+.section {
+  margin: 1.25rem 0;
+  flex: 1;
+  justify-content: center;
+
+  &__item {
+    flex-direction: row;
+    margin: 0.3125rem 0;
+  }
+
+  &__icon {
+    width: 1.25rem;
+    margin-right: 0.3125rem;
+    &--exclude {
+      fill: #A00;;
+    }
+    &--include {
+      fill: #0A0;
+    }
+  }
+
+  &__text {
+    font-size: 0.875rem;
+  }
+
+}
+
+.price {
+  justify-content: center;
+  align-items: center;
+
+  &__section {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__number {
+    font-size: 1.25rem;
+    margin-right: 0.125rem;
+  }
+
+
+  &__text {
+    font-size: 0.875rem;
+  }
+
+}
+
+.button {
+  background-color: $white;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+  margin-top: 1.25rem;
+  cursor: pointer;
+  border: 0.125rem solid $secondary-color;
+
+  &--best {
+    background-color: $secondary-color;
+  }
+
+  &__text {
+    color: $secondary-color;
+    font-weight: 800;
+
+    &--best {
+      color: $white;
+    }
+  }
+}
