@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import Icon from '@mdi/react';
@@ -6,11 +6,31 @@ import { mdiCheckBold, mdiClose, mdiSeal } from '@mdi/js';
 
 import './styles.scss';
 
-export default function Card({ best, image, title }) {
+export default function Card({ best, data, choices }) {
+  console.log(choices);
+  console.log(data);
+  const { maximumTime, tax, fee } = data;
+  const { originValue, destinationValue, minutes } = choices;
+  const exceededMinutes = maximumTime - minutes;
+  const [price, setPrice] = useState({
+    priceWithDiscount:
+      exceededMinutes < 0 ? Math.abs(exceededMinutes) * (tax * fee) : 0,
+    priceWithoutDiscount: maximumTime * tax,
+  });
+
+  useEffect(() => {
+    setPrice({
+      priceWithDiscount:
+        exceededMinutes < 0 ? Math.abs(exceededMinutes) * (tax * fee) : 0,
+      priceWithoutDiscount: mdiAccountMultiplePlusOutline * tax,
+    });
+    console.log(price);
+  }, []);
+
   return (
     <div className={`card ${best && 'card--best'}`}>
-      <img src={image} alt="Phone" className="image" />
-      <h3 className="title">{title}</h3>
+      <img src={data.image} alt="Phone" className="image" />
+      <h3 className="title">{data.name}</h3>
       {best && (
         <div className="flag">
           <Icon className="flag__icon" path={mdiSeal} />
@@ -71,7 +91,8 @@ export default function Card({ best, image, title }) {
 Card.propTypes = {
   best: PropTypes.bool,
   image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  data: PropTypes.shape.isRequired,
+  choices: PropTypes.shape.isRequired,
 };
 
 Card.defaultProps = {
