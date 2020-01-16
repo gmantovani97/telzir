@@ -100,6 +100,7 @@ export default function Pricing() {
         <div className="data__field">
           <p className="data__text">DDD de destino</p>
           <input
+            data-testid="destination_input"
             maxLength={2}
             type="text"
             className="data__input"
@@ -111,6 +112,7 @@ export default function Pricing() {
         <div className="data__field">
           <p className="data__text">Tempo da ligação (min)</p>
           <input
+            data-testid="minutes_input"
             maxLength={3}
             type="text"
             className="data__input"
@@ -123,6 +125,7 @@ export default function Pricing() {
       <div className="content">
         {values.map(item => (
           <Card
+            key={item.id}
             image={Rookie}
             data={item}
             choices={{ originValue, destinationValue, minutes }}
