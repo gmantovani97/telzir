@@ -1,28 +1,22 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Pricing from '@/pages/Pricing';
+import Card from '@/pages/Pricing/components/Card';
 
 describe('Pricing component', () => {
   it('should calculate value of plans when minutes input change', () => {
-    const { getByTestId, debug } = render(<Pricing />);
+    const { getByTestId, debug, getByText } = render(<Pricing />);
 
-    debug();
+    const input = getByTestId('minutes-input');
+    const originSelect = getByTestId('origin-select');
+    const destinationSelect = getByTestId('destination-select');
 
-    const input = getByTestId('minutes_input');
-
+    fireEvent.click(originSelect, getByTestId('origin-option-18'));
+    fireEvent.click(destinationSelect, getByTestId('destination-option-11'));
     fireEvent.change(input, { target: { value: '20' } });
 
-    debug();
-
-    expect(input.value).toBe('20');
+    expect(originSelect.value).toBe(18);
+    expect(destinationSelect.value).toBe(11);
+    expect(input.value).toBe('200');
   });
-  // it('should calculate value of plans when destination input change', () => {
-  //   const { getByTestId } = render(<Pricing />);
-
-  //   const select = getByTestId('origin-select');
-
-  //   fireEvent.select(select, { target: { value: '17' } });
-
-  //   expect(input.value).toBe('17');
-  // });
 });

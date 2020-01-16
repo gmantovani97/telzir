@@ -24,8 +24,6 @@ export default function Pricing() {
   const [minutes, setMinutes] = useState(200);
 
   const tax = useMemo(() => {
-    console.log(originValue);
-    console.log(destinationValue);
     if (originValue !== 11 && destinationValue !== 11) {
       return prices[Number(`${originValue}11`)];
     }
@@ -110,33 +108,61 @@ export default function Pricing() {
         <div className="data__field">
           <p className="data__text">DDD de origem</p>
           <select
+            data-testid="origin-select"
             defaultValue={originValue}
             value={originValue}
-            onChange={e => handleChangeOriginValue(Number(e.currentTarget.value))}
+            onChange={e =>
+              handleChangeOriginValue(Number(e.currentTarget.value))
+            }
           >
-            <option value={11}>11</option>
-            <option value={16}>16</option>
-            <option value={17}>17</option>
-            <option value={18}>18</option>
+            <option value={11} data-testid="origin-option-11">
+              11
+            </option>
+            <option value={16} data-testid="origin-option-16">
+              16
+            </option>
+            <option value={17} data-testid="origin-option-17">
+              17
+            </option>
+            <option value={18} data-testid="origin-option-18">
+              18
+            </option>
           </select>
         </div>
         <div className="data__field">
           <p className="data__text">DDD de destino</p>
           <select
+            data-testid="destination-select"
             defaultValue={destinationValue}
             value={destinationValue}
             onChange={e => setDestinationValue(Number(e.currentTarget.value))}
           >
-            <option value={16} disabled={originValue !== 11}>
+            <option
+              value={16}
+              disabled={originValue !== 11}
+              data-testid="destination-option-16"
+            >
               16
             </option>
-            <option value={17} disabled={originValue !== 11}>
+            <option
+              value={17}
+              disabled={originValue !== 11}
+              data-testid="destination-option-17"
+            >
               17
             </option>
-            <option value={18} disabled={originValue !== 11}>
+            <option
+              value={18}
+              disabled={originValue !== 11}
+              data-testid="destination-option-18"
+            >
               18
             </option>
-            <option value={11} disabled={originValue === 11}>
+            <option
+              value={11}
+              disabled={originValue === 11}
+              data-testid="destination-option-11"
+            >
               11
             </option>
           </select>
@@ -144,7 +170,7 @@ export default function Pricing() {
         <div className="data__field">
           <p className="data__text">Tempo da ligação (min)</p>
           <input
-            data-testid="minutes_input"
+            data-testid="minutes-input"
             maxLength={3}
             type="text"
             className="data__input"
