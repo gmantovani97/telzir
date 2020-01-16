@@ -1,7 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import Icon from '@mdi/react';
-import { mdiChevronDown } from '@mdi/js';
-import Select from 'react-select';
+import React, { useState, useMemo } from 'react';
 
 import Rookie from '../../assets/images/rookie.svg';
 import Prime from '../../assets/images/prime.svg';
@@ -19,42 +16,66 @@ export default function Pricing() {
     1118: 0.9,
     1811: 1.9,
   };
-  const [originValue, setOriginValue] = useState(11);
-  const [destinationValue, setDestinationValue] = useState(16);
-  const [minutes, setMinutes] = useState(20);
-  const [tax, setTax] = useState(
-    prices[Number(`${originValue}${destinationValue}`)]
+  const [originValue, setOriginValue] = useState(18);
+  const [destinationValue, setDestinationValue] = useState(11);
+  const [minutes, setMinutes] = useState(200);
+  const tax = useMemo(
+    () => prices[Number(`${originValue}${destinationValue}`)],
+    [originValue, destinationValue]
   );
-  const [values, setValues] = useState([
-    {
-      id: 1,
-      name: 'FaleMais 30',
-      image: Rookie,
-      maximumTime: 30,
-      tax,
-      fee: 1.1,
-    },
-    {
-      id: 2,
-      name: 'FaleMais 60',
-      image: Prime,
-      maximumTime: 60,
-      tax,
-      fee: 1.1,
-    },
-    {
-      id: 3,
-      name: 'FaleMais 120',
-      image: Elite,
-      maximumTime: 120,
-      tax,
-      fee: 1.1,
-    },
-  ]);
-
-  useEffect(() => {
-    setTax(prices[Number(`${originValue}${destinationValue}`)]);
-  }, [originValue, destinationValue, minutes]);
+  const values = useMemo(() => {
+    const array = [
+      {
+        id: 1,
+        name: 'FaleMais 30',
+        image: Rookie,
+        best: false,
+        maximumTime: 30,
+        priceWithDiscount:
+          30 - minutes < 0
+            ? (Math.abs(30 - minutes) * (tax * 1.1)).toFixed(2)
+            : (0.0).toFixed(2),
+        priceWithoutDiscount: (minutes * tax).toFixed(2),
+        tax,
+      },
+      {
+        id: 2,
+        name: 'FaleMais 60',
+        image: Prime,
+        best: false,
+        maximumTime: 60,
+        priceWithDiscount:
+          60 - minutes < 0
+            ? (Math.abs(60 - minutes) * (tax * 1.1)).toFixed(2)
+            : (0.0).toFixed(2),
+        priceWithoutDiscount: (minutes * tax).toFixed(2),
+        tax,
+      },
+      {
+        id: 3,
+        name: 'FaleMais 120',
+        image: Elite,
+        best: false,
+        maximumTime: 120,
+        priceWithDiscount:
+          120 - minutes < 0
+            ? (Math.abs(120 - minutes) * (tax * 1.1)).toFixed(2)
+            : (0.0).toFixed(2),
+        priceWithoutDiscount: (minutes * tax).toFixed(2),
+        tax,
+      },
+    ];
+    let maxValue = Infinity;
+    let key;
+    array.forEach((item, index) => {
+      if (maxValue > item.priceWithDiscount) {
+        maxValue = item.priceWithDiscount;
+        key = index;
+      }
+    });
+    array[key].best = true;
+    return array;
+  }, [minutes, tax]);
 
   return (
     <div className="container">

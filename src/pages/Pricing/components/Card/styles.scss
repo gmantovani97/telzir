@@ -1,6 +1,14 @@
 @import '../../../../styles/mixins.scss';
 @import '../../../../styles/variables.scss';
 
+@keyframes setShadow {
+  from {
+    box-shadow: 0 0 transparent;
+  } to {
+    box-shadow: 0 0 0.625rem $grey;
+  }
+}
+
 .card {
   padding: 1.25rem;
   margin: 0 2.5rem;
@@ -9,6 +17,11 @@
     padding: 1.25rem;
     border: 0.125rem solid $primary-dark;
   }
+
+  &:hover {
+    animation: setShadow 500ms forwards;
+  }
+
 }
 
 .flag {
@@ -94,6 +107,48 @@
 
 }
 
+@keyframes setBestButtonColor {
+  from {
+    background-color: $secondary-color;
+    border: 0.125rem solid $secondary-color;
+  } to {
+    background-color: $secondary-dark;
+    border: 0.125rem solid $secondary-dark;
+  }
+}
+
+@keyframes setButtonColor {
+  from {
+    background-color: $white;
+    border: 0.125rem solid $secondary-dark;
+    p {
+      color: $secondary-dark;
+    }
+  } to {
+    background-color: $secondary-dark;
+    border: 0.125rem solid $secondary-dark;
+    p {
+      color: $white;
+    }
+  }
+}
+
+@keyframes setButtonTextColor {
+  from {
+    color: $secondary-dark;
+  } to {
+    color: $white;
+  }
+}
+
+@keyframes setBestButtonTextColor {
+  to {
+    color: $white;
+  }
+}
+
+
+
 .button {
   background-color: $white;
   height: 3rem;
@@ -102,16 +157,30 @@
   border-radius: 1.5rem;
   margin-top: 1.25rem;
   cursor: pointer;
-  border: 0.125rem solid $secondary-color;
+  border: 0.125rem solid $secondary-dark;
+
+  &:hover {
+    animation: setButtonColor 500ms forwards;
+
+    p {
+      color: $white;
+    }
+  }
 
   &--best {
     background-color: $secondary-color;
+    border: 0.125rem solid $secondary-color;
+
+    &:hover {
+      animation: setBestButtonColor 500ms forwards;
+    }
+  
   }
 
   &__text {
-    color: $secondary-color;
+    color: $secondary-dark;
     font-weight: 800;
-
+    
     &--best {
       color: $white;
     }

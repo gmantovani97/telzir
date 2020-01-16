@@ -6,26 +6,26 @@ import { mdiCheckBold, mdiClose, mdiSeal } from '@mdi/js';
 
 import './styles.scss';
 
-export default function Card({ best, data, choices }) {
-  console.log(choices);
-  console.log(data);
-  const { maximumTime, tax, fee } = data;
+export default function Card({ data, choices }) {
+  const { maximumTime, tax, priceWithDiscount, best } = data;
   const { originValue, destinationValue, minutes } = choices;
-  const exceededMinutes = maximumTime - minutes;
-  const [price, setPrice] = useState({
-    priceWithDiscount:
-      exceededMinutes < 0 ? Math.abs(exceededMinutes) * (tax * fee) : 0,
-    priceWithoutDiscount: maximumTime * tax,
-  });
+  // const exceededMinutes = maximumTime - minutes;
+  // const [price, setPrice] = useState({
+  //   priceWithDiscount:
+  //     exceededMinutes < 0
+  //       ? (Math.abs(exceededMinutes) * (tax * fee)).toFixed(2)
+  //       : (0.0).toFixed(2),
+  //   priceWithoutDiscount: (minutes * tax).toFixed(2),
+  // });
 
-  useEffect(() => {
-    setPrice({
-      priceWithDiscount:
-        exceededMinutes < 0 ? Math.abs(exceededMinutes) * (tax * fee) : 0,
-      priceWithoutDiscount: mdiAccountMultiplePlusOutline * tax,
-    });
-    console.log(price);
-  }, []);
+  // useEffect(() => {
+  //   setPrice({
+  //     priceWithDiscount:
+  //       exceededMinutes < 0
+  //         ? (Math.abs(exceededMinutes) * (tax * fee)).toFixed(2)
+  //         : (0.0).toFixed(2),
+  //   });
+  // }, []);
 
   return (
     <div className={`card ${best && 'card--best'}`}>
@@ -75,26 +75,21 @@ export default function Card({ best, data, choices }) {
       </div>
       <div className="price">
         <div className="price__section">
-          <h3 className="price__number">82,50</h3>
+          <h3 className="price__number">{priceWithDiscount}</h3>
           <h4 className="price__text">/mês</h4>
         </div>
       </div>
       <div className={`button ${best && 'button--best'}`}>
-        <div className={`button__text ${best && 'button__text--best'}`}>
+        <p className={`button__text ${best && 'button__text--best'}`}>
           Contratar
-        </div>
+        </p>
       </div>
     </div>
   );
 }
 
 Card.propTypes = {
-  best: PropTypes.bool,
   image: PropTypes.string.isRequired,
   data: PropTypes.shape.isRequired,
   choices: PropTypes.shape.isRequired,
-};
-
-Card.defaultProps = {
-  best: false,
 };
