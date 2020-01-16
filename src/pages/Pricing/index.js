@@ -16,13 +16,25 @@ export default function Pricing() {
     1118: 0.9,
     1811: 1.9,
   };
-  const [originValue, setOriginValue] = useState(18);
-  const [destinationValue, setDestinationValue] = useState(11);
+
+  const [originValue, setOriginValue] = useState(11);
+
+  const [destinationValue, setDestinationValue] = useState(16);
+
   const [minutes, setMinutes] = useState(200);
-  const tax = useMemo(
-    () => prices[Number(`${originValue}${destinationValue}`)],
-    [originValue, destinationValue]
-  );
+
+  const tax = useMemo(() => {
+    console.log(originValue);
+    console.log(destinationValue);
+    if (originValue !== 11 && destinationValue !== 11) {
+      return prices[Number(`${originValue}11`)];
+    }
+    if (originValue === 11 && destinationValue === 11) {
+      return prices[Number(`1116`)];
+    }
+    return prices[Number(`${originValue}${destinationValue}`)];
+  }, [originValue, destinationValue]);
+
   const values = useMemo(() => {
     const array = [
       {
@@ -77,6 +89,15 @@ export default function Pricing() {
     return array;
   }, [minutes, tax]);
 
+  function handleChangeOriginValue(value) {
+    setOriginValue(Number(value));
+    if (value !== 11) {
+      setDestinationValue(11);
+    } else if (destinationValue === 11) {
+      setDestinationValue(16);
+    }
+  }
+
   return (
     <div className="container">
       <h1 className="container__title">
@@ -88,26 +109,37 @@ export default function Pricing() {
       <div className="data">
         <div className="data__field">
           <p className="data__text">DDD de origem</p>
-          <input
-            maxLength={2}
-            type="text"
-            className="data__input"
-            value={originValue}
+          <select
             defaultValue={originValue}
-            onChange={e => setOriginValue(e.target.value)}
-          />
+            value={originValue}
+            onChange={e => handleChangeOriginValue(Number(e.currentTarget.value))}
+          >
+            <option value={11}>11</option>
+            <option value={16}>16</option>
+            <option value={17}>17</option>
+            <option value={18}>18</option>
+          </select>
         </div>
         <div className="data__field">
           <p className="data__text">DDD de destino</p>
-          <input
-            data-testid="destination_input"
-            maxLength={2}
-            type="text"
-            className="data__input"
-            value={destinationValue}
+          <select
             defaultValue={destinationValue}
-            onChange={e => setDestinationValue(e.target.value)}
-          />
+            value={destinationValue}
+            onChange={e => setDestinationValue(Number(e.currentTarget.value))}
+          >
+            <option value={16} disabled={originValue !== 11}>
+              16
+            </option>
+            <option value={17} disabled={originValue !== 11}>
+              17
+            </option>
+            <option value={18} disabled={originValue !== 11}>
+              18
+            </option>
+            <option value={11} disabled={originValue === 11}>
+              11
+            </option>
+          </select>
         </div>
         <div className="data__field">
           <p className="data__text">Tempo da ligação (min)</p>
