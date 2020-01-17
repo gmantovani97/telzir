@@ -50,6 +50,18 @@
     justify-content: stretch;
     align-items: stretch;
   }
+
+  &__select {
+    background-color: $white;
+    color: $black;
+    font-weight: 600;
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    text-align: center;
+    padding-left: 0.625rem;
+  }
   
   &__field {
     flex-direction: row;

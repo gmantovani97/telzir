@@ -59,7 +59,9 @@ export default function Card({ data }) {
       </div>
       <div className="price">
         <div className="price__section" data-testid={`pricewithdiscount-${id}`}>
-          <h3 className="price__number">{priceWithDiscount}</h3>
+          <h3 className="price__number">
+            {priceWithDiscount.replace('.', ',')}
+          </h3>
           <h4 className="price__text">/mês</h4>
         </div>
       </div>

@@ -23,7 +23,7 @@ describe('Pricing component', () => {
     expect(input.value).toBe('200');
 
     expect(getByTestId('pricewithdiscount-3')).toContainElement(
-      getByText('167.20')
+      getByText('167,20')
     );
   });
 });

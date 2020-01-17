@@ -78,7 +78,7 @@ export default function Pricing() {
     let maxValue = Infinity;
     let key;
     array.forEach((item, index) => {
-      if (maxValue > item.priceWithDiscount) {
+      if (Number(maxValue) > Number(item.priceWithDiscount)) {
         maxValue = item.priceWithDiscount;
         key = index;
       }
@@ -110,6 +110,7 @@ export default function Pricing() {
           <select
             data-testid="origin-select"
             value={originValue}
+            className="data__select"
             onChange={e =>
               handleChangeOriginValue(Number(e.currentTarget.value))
             }
@@ -132,6 +133,7 @@ export default function Pricing() {
           <p className="data__text">DDD de destino</p>
           <select
             data-testid="destination-select"
+            className="data__select"
             value={destinationValue}
             onChange={e => setDestinationValue(Number(e.currentTarget.value))}
           >
