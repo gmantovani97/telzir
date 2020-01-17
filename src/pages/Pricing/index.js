@@ -21,7 +21,7 @@ export default function Pricing() {
 
   const [destinationValue, setDestinationValue] = useState(16);
 
-  const [minutes, setMinutes] = useState(200);
+  const [minutes, setMinutes] = useState(20);
 
   const tax = useMemo(() => {
     if (originValue !== 11 && destinationValue !== 11) {
@@ -109,7 +109,6 @@ export default function Pricing() {
           <p className="data__text">DDD de origem</p>
           <select
             data-testid="origin-select"
-            defaultValue={originValue}
             value={originValue}
             onChange={e =>
               handleChangeOriginValue(Number(e.currentTarget.value))
@@ -133,7 +132,6 @@ export default function Pricing() {
           <p className="data__text">DDD de destino</p>
           <select
             data-testid="destination-select"
-            defaultValue={destinationValue}
             value={destinationValue}
             onChange={e => setDestinationValue(Number(e.currentTarget.value))}
           >
@@ -175,7 +173,6 @@ export default function Pricing() {
             type="text"
             className="data__input"
             value={minutes}
-            defaultValue={minutes}
             onChange={e => setMinutes(e.target.value)}
           />
         </div>

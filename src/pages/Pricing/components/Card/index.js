@@ -6,31 +6,13 @@ import { mdiCheckBold, mdiClose, mdiSeal } from '@mdi/js';
 
 import './styles.scss';
 
-export default function Card({ data, choices }) {
-  const { maximumTime, tax, priceWithDiscount, best } = data;
-  const { originValue, destinationValue, minutes } = choices;
-  // const exceededMinutes = maximumTime - minutes;
-  // const [price, setPrice] = useState({
-  //   priceWithDiscount:
-  //     exceededMinutes < 0
-  //       ? (Math.abs(exceededMinutes) * (tax * fee)).toFixed(2)
-  //       : (0.0).toFixed(2),
-  //   priceWithoutDiscount: (minutes * tax).toFixed(2),
-  // });
-
-  // useEffect(() => {
-  //   setPrice({
-  //     priceWithDiscount:
-  //       exceededMinutes < 0
-  //         ? (Math.abs(exceededMinutes) * (tax * fee)).toFixed(2)
-  //         : (0.0).toFixed(2),
-  //   });
-  // }, []);
+export default function Card({ data }) {
+  const { id, priceWithDiscount, best, image, name } = data;
 
   return (
     <div className={`card ${best && 'card--best'}`}>
-      <img src={data.image} alt="Phone" className="image" />
-      <h3 className="title">{data.name}</h3>
+      <img src={image} alt="Phone" className="image" />
+      <h3 className="title">{name}</h3>
       {best && (
         <div className="flag">
           <Icon className="flag__icon" path={mdiSeal} />
@@ -74,7 +56,7 @@ export default function Card({ data, choices }) {
         </div>
       </div>
       <div className="price">
-        <div className="price__section">
+        <div className="price__section" data-testid={`pricewithdiscount-${id}`}>
           <h3 className="price__number">{priceWithDiscount}</h3>
           <h4 className="price__text">/mês</h4>
         </div>
@@ -90,6 +72,11 @@ export default function Card({ data, choices }) {
 
 Card.propTypes = {
   image: PropTypes.string.isRequired,
-  data: PropTypes.shape.isRequired,
-  choices: PropTypes.shape.isRequired,
+  data: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    priceWithDiscount: PropTypes.string.isRequired,
+    best: PropTypes.bool.isRequired,
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
 };
