@@ -1,25 +1,25 @@
 @import './variables.scss';
 
 @mixin s {
-  @media (min-width: #{$screen-s-min}) {
+  @media (max-width: #{$screen-s-min}) {
     @content;
   }
 }
 
 @mixin m {
-  @media (min-width: #{$screen-m-min}) {
+  @media (max-width: #{$screen-m-min}) {
     @content;
   }
 }
 
 @mixin l {
-  @media (min-width: #{$screen-l-min}) {
+  @media (max-width: #{$screen-l-min}) {
     @content;
   }
 }
 
 @mixin xl {
-  @media (min-width: #{$screen-xl-min}) {
+  @media (max-width: #{$screen-xl-min}) {
     @content;
   }
 }

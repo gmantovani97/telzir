@@ -11,8 +11,10 @@ export default function Card({ data }) {
 
   return (
     <div className={`card ${best && 'card--best'}`}>
-      <img src={image} alt="Phone" className="image" />
-      <h3 className="title">{name}</h3>
+      <div className="card__header">
+        <img src={image} alt="Phone" className="image" />
+        <h3 className="title">{name}</h3>
+      </div>
       {best && (
         <div className="flag">
           <Icon className="flag__icon" path={mdiSeal} />

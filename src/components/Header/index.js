@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from '@mdi/react';
-import { mdiAccountOutline } from '@mdi/js';
+import { mdiAccountOutline, mdiMenu } from '@mdi/js';
 
 import './styles.scss';
 
@@ -25,6 +25,9 @@ export default function Header() {
         <div className="menu__getstarted">
           <p>Get Started</p>
         </div>
+      </div>
+      <div className="hamburguer">
+        <Icon path={mdiMenu} className="hamburguer__icon" />
       </div>
     </div>
   );

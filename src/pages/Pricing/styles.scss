@@ -8,12 +8,26 @@
   &__title {
     align-self: center;
     font-weight: 300;
+    text-align: center;
+    @include s {
+      font-size: 1.25rem;
+    }
+    @include m {
+      font-size: 1.25rem;
+    }
   }
 
   &__subtitle {
     align-self: center;
     margin: 1.25rem 0;
+    text-align: center;
     color: $grey;
+    @include s {
+      font-size: 0.875rem;
+    }
+    @include m {
+      font-size: 0.875rem;
+    }
   }
 }
 
@@ -22,19 +36,51 @@
   margin-bottom: 1.25rem;
   justify-content: center;
   align-items: center;
+
+
+  @include s {
+    flex: 1;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+  }
+  @include m {
+    flex: 1;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+  }
   
   &__field {
-    // &:last-of-type {
-    //   margin: 0 0.625rem;
-    // }
     flex-direction: row;
     background-color: $secondary-color;
     border-radius: 0.3125rem;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 0.625rem;
     &:nth-of-type(2) {
       margin: 0 0.625rem;
+    }
+    @include s {
+      flex: 1;
+      flex-grow: 1;
+      align-self: stretch;
+      margin: 0.625rem 0;
+      &:nth-of-type(2) {
+        margin: 0.625rem 0;
+      }
+    }
+    @include m {
+      flex: 1;
+      flex-grow: 1;
+      align-self: stretch;
+      margin: 0.625rem 0;
+      &:nth-of-type(2) {
+        margin: 0.625rem 0;
+      }
+    }
+    @include l {
+      margin: 0;
     }
   }
 
@@ -51,6 +97,7 @@
 
     &:last-of-type {
       max-width: 3rem;
+      max-height: 1.25rem;
     }
   }
 
@@ -59,10 +106,25 @@
     font-weight: 700;
     margin-right: 0.3125rem;
     color: $white;
+    @include s {
+      font-size: 0.875rem;
+    }
+    @include m {
+      font-size: 0.875rem;
+    }
+    @include l {
+      font-size: 1rem;
+    }
   }
 }
 
 .content {
-  flex-direction: row;
   flex: 1;
+  flex-direction: row;
+  @include s {
+    flex-direction: column;
+  }
+  @include m {
+    flex-direction: column;
+  }
 }

@@ -1,6 +1,8 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 .header {
+  flex-grow: 1;
   flex-direction: row;
   justify-content: space-between;
   height: 3.75rem;
@@ -38,6 +40,14 @@
 .menu {
   flex-direction: row;
   justify-content: flex-end;
+
+  @include s {
+    display: none;
+  }
+
+  @include m {
+    display: none;
+  }
 
   &__button {
     padding: 0.625rem;
@@ -111,5 +121,22 @@
     &:hover {
       animation: onhoverbutton 500ms forwards;
     }
+  }
+}
+
+.hamburguer {
+  display: none;
+  cursor: pointer;
+
+  @include s {
+    display: flex;
+  }
+
+  @include m {
+    display: flex;
+  }
+
+  &__icon {
+    height: 1.25rem;
   }
 }

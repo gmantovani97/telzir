@@ -1,9 +1,12 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Pricing from '@/pages/Pricing';
-import Card from '@/pages/Pricing/components/Card';
 
 describe('Pricing component', () => {
+  it('matches snapshot', () => {
+    const { asFragment } = render(<Pricing />);
+    expect(asFragment()).toMatchSnapshot();
+  });
   it('should calculate value of plans when minutes input change', () => {
     const { getByTestId, getByText } = render(<Pricing />);
 
