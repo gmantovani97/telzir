@@ -1,0 +1,572 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="header"
+  >
+    <h1>
+      GixDocs
+    </h1>
+    <div
+      class="menu"
+    >
+      <div
+        class="menu__button"
+      >
+        <p>
+          Home
+        </p>
+      </div>
+      <div
+        class="menu__button menu__button--selected"
+      >
+        <p>
+          Pricing
+        </p>
+      </div>
+      <div
+        class="menu__button"
+      >
+        <p>
+          About us
+        </p>
+      </div>
+      <div
+        class="menu__login"
+      >
+        <svg
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z"
+          />
+        </svg>
+        <p>
+          Login
+        </p>
+      </div>
+      <div
+        class="menu__getstarted"
+      >
+        <p>
+          Get Started
+        </p>
+      </div>
+    </div>
+    <div
+      class="hamburguer"
+    >
+      <svg
+        class="hamburguer__icon"
+        role="presentation"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    class="container"
+  >
+    <h1
+      class="container__title"
+    >
+      Insira os dados abaixo para avaliar suas opções
+    </h1>
+    <h4
+      class="container__subtitle"
+    >
+      Fale até 120 minutos sem pagar nada
+    </h4>
+    <div
+      class="data"
+    >
+      <div
+        class="data__field"
+      >
+        <p
+          class="data__text"
+        >
+          DDD de origem
+        </p>
+        <select
+          class="data__select"
+          data-testid="origin-select"
+        >
+          <option
+            data-testid="origin-option-11"
+            value="11"
+          >
+            11
+          </option>
+          <option
+            data-testid="origin-option-16"
+            value="16"
+          >
+            16
+          </option>
+          <option
+            data-testid="origin-option-17"
+            value="17"
+          >
+            17
+          </option>
+          <option
+            data-testid="origin-option-18"
+            value="18"
+          >
+            18
+          </option>
+        </select>
+      </div>
+      <div
+        class="data__field"
+      >
+        <p
+          class="data__text"
+        >
+          DDD de destino
+        </p>
+        <select
+          class="data__select"
+          data-testid="destination-select"
+        >
+          <option
+            data-testid="destination-option-16"
+            value="16"
+          >
+            16
+          </option>
+          <option
+            data-testid="destination-option-17"
+            value="17"
+          >
+            17
+          </option>
+          <option
+            data-testid="destination-option-18"
+            value="18"
+          >
+            18
+          </option>
+          <option
+            data-testid="destination-option-11"
+            disabled=""
+            value="11"
+          >
+            11
+          </option>
+        </select>
+      </div>
+      <div
+        class="data__field"
+      >
+        <p
+          class="data__text"
+        >
+          Tempo da ligação (min)
+        </p>
+        <input
+          class="data__input"
+          data-testid="minutes-input"
+          maxlength="3"
+          type="text"
+          value="20"
+        />
+      </div>
+    </div>
+    <div
+      class="content"
+    >
+      <div
+        class="card card--best"
+      >
+        <div
+          class="card__header"
+        >
+          <img
+            alt="Phone"
+            class="image"
+            src="rookie.svg"
+          />
+          <h3
+            class="title"
+          >
+            FaleMais 30
+          </h3>
+        </div>
+        <div
+          class="flag"
+        >
+          <svg
+            class="flag__icon"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M20.39,19.37L16.38,18L15,22L11.92,16L9,22L7.62,18L3.61,19.37L6.53,13.37C5.57,12.17 5,10.65 5,9A7,7 0 0,1 12,2A7,7 0 0,1 19,9C19,10.65 18.43,12.17 17.47,13.37L20.39,19.37M7,9L9.69,10.34L9.5,13.34L12,11.68L14.5,13.33L14.33,10.34L17,9L14.32,7.65L14.5,4.67L12,6.31L9.5,4.65L9.67,7.66L7,9Z"
+            />
+          </svg>
+          <p
+            class="flag__text"
+          >
+            Melhor plano
+          </p>
+        </div>
+        <div
+          class="section"
+        >
+          <div
+            class="section__item"
+          >
+            <svg
+              class="section__icon section__icon--include"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"
+              />
+            </svg>
+            <p
+              class="section__text"
+            >
+              Ligações locais gratuitas
+            </p>
+          </div>
+          <div
+            class="section__item"
+          >
+            <svg
+              class="section__icon section__icon--include"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"
+              />
+            </svg>
+            <p
+              class="section__text"
+            >
+              Ligações para mesma operadora sem custo
+            </p>
+          </div>
+          <div
+            class="section__item"
+          >
+            <svg
+              class="section__icon section__icon--exclude"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+              />
+            </svg>
+            <p
+              class="section__text"
+            >
+              Ligações entre 00:00 e 06:00 com 50% de desconto
+            </p>
+          </div>
+          <div
+            class="section__item"
+          >
+            <svg
+              class="section__icon section__icon--exclude"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+              />
+            </svg>
+            <p
+              class="section__text"
+            >
+              Ligações em feriado com 20% de desconto
+            </p>
+          </div>
+        </div>
+        <div
+          class="price"
+        >
+          <div
+            class="price__section"
+            data-testid="pricewithdiscount-1"
+          >
+            <h3
+              class="price__number"
+            >
+              0,00
+            </h3>
+            <h4
+              class="price__text"
+            >
+              /mês
+            </h4>
+          </div>
+        </div>
+        <div
+          class="button button--best"
+        >
+          <p
+            class="button__text button__text--best"
+          >
+            Contratar
+          </p>
+        </div>
+      </div>
+      <div
+        class="card false"
+      >
+        <div
+          class="card__header"
+        >
+          <img
+            alt="Phone"
+            class="image"
+            src="prime.svg"
+          />
+          <h3
+            class="title"
+          >
+            FaleMais 60
+          </h3>
+        </div>
+        <div
+          class="section"
+        >
+          <div
+            class="section__item"
+          >
+            <svg
+              class="section__icon section__icon--include"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"
+              />
+            </svg>
+            <p
+              class="section__text"
+            >
+              Ligações locais gratuitas
+            </p>
+          </div>
+          <div
+            class="section__item"
+          >
+            <svg
+              class="section__icon section__icon--include"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"
+              />
+            </svg>
+            <p
+              class="section__text"
+            >
+              Ligações para mesma operadora sem custo
+            </p>
+          </div>
+          <div
+            class="section__item"
+          >
+            <svg
+              class="section__icon section__icon--exclude"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+              />
+            </svg>
+            <p
+              class="section__text"
+            >
+              Ligações entre 00:00 e 06:00 com 50% de desconto
+            </p>
+          </div>
+          <div
+            class="section__item"
+          >
+            <svg
+              class="section__icon section__icon--exclude"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+              />
+            </svg>
+            <p
+              class="section__text"
+            >
+              Ligações em feriado com 20% de desconto
+            </p>
+          </div>
+        </div>
+        <div
+          class="price"
+        >
+          <div
+            class="price__section"
+            data-testid="pricewithdiscount-2"
+          >
+            <h3
+              class="price__number"
+            >
+              0,00
+            </h3>
+            <h4
+              class="price__text"
+            >
+              /mês
+            </h4>
+          </div>
+        </div>
+        <div
+          class="button false"
+        >
+          <p
+            class="button__text false"
+          >
+            Contratar
+          </p>
+        </div>
+      </div>
+      <div
+        class="card false"
+      >
+        <div
+          class="card__header"
+        >
+          <img
+            alt="Phone"
+            class="image"
+            src="elite.svg"
+          />
+          <h3
+            class="title"
+          >
+            FaleMais 120
+          </h3>
+        </div>
+        <div
+          class="section"
+        >
+          <div
+            class="section__item"
+          >
+            <svg
+              class="section__icon section__icon--include"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"
+              />
+            </svg>
+            <p
+              class="section__text"
+            >
+              Ligações locais gratuitas
+            </p>
+          </div>
+          <div
+            class="section__item"
+          >
+            <svg
+              class="section__icon section__icon--include"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"
+              />
+            </svg>
+            <p
+              class="section__text"
+            >
+              Ligações para mesma operadora sem custo
+            </p>
+          </div>
+          <div
+            class="section__item"
+          >
+            <svg
+              class="section__icon section__icon--exclude"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+              />
+            </svg>
+            <p
+              class="section__text"
+            >
+              Ligações entre 00:00 e 06:00 com 50% de desconto
+            </p>
+          </div>
+          <div
+            class="section__item"
+          >
+            <svg
+              class="section__icon section__icon--exclude"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+              />
+            </svg>
+            <p
+              class="section__text"
+            >
+              Ligações em feriado com 20% de desconto
+            </p>
+          </div>
+        </div>
+        <div
+          class="price"
+        >
+          <div
+            class="price__section"
+            data-testid="pricewithdiscount-3"
+          >
+            <h3
+              class="price__number"
+            >
+              0,00
+            </h3>
+            <h4
+              class="price__text"
+            >
+              /mês
+            </h4>
+          </div>
+        </div>
+        <div
+          class="button false"
+        >
+          <p
+            class="button__text false"
+          >
+            Contratar
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
