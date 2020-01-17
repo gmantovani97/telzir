@@ -75,7 +75,6 @@ export default function Card({ data }) {
 }
 
 Card.propTypes = {
-  image: PropTypes.string.isRequired,
   data: PropTypes.shape({
     id: PropTypes.number.isRequired,
     priceWithDiscount: PropTypes.string.isRequired,
