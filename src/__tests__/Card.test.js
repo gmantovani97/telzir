@@ -9,6 +9,8 @@ describe('Card component', () => {
     const data = {
       id: 1,
       priceWithDiscount: '167.20',
+      priceWithoutDiscount: '380.00',
+      maximumTime: 120,
       best: false,
       image,
       name: 'Falemais 120',

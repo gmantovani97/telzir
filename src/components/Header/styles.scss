@@ -2,7 +2,6 @@
 @import '../../styles/mixins.scss';
 
 .header {
-  flex-grow: 1;
   flex-direction: row;
   justify-content: space-between;
   height: 3.75rem;
@@ -18,14 +17,6 @@
     box-shadow: 0 0 0.3125rem $grey;
   } to {
     box-shadow: 0 0 0.625rem $grey;
-  }
-}
-
-@keyframes onhovergetstarted {
-  from {
-    box-shadow: 0 0 0.3125rem $primary-color;
-  } to {
-    box-shadow: 0 0 0.625rem $primary-color;
   }
 }
 
@@ -84,7 +75,7 @@
     box-shadow: 0 0 0.3125rem $secondary-color;
 
     &:hover {
-      animation: onhovergetstarted 200ms forwards;
+      animation: onhoverbutton 200ms forwards;
       p {
         animation: onhover 200ms forwards;
       }
@@ -93,6 +84,17 @@
     p {
       color: $white;
       font-weight: 700;
+    }
+
+    @include l {
+      p {
+        display: none;
+      }
+      &::after {
+        color: $white;
+        font-weight: 700;
+        content: 'Cadastrar';
+      }
     }
   }
 

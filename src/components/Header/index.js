@@ -7,23 +7,23 @@ import './styles.scss';
 export default function Header() {
   return (
     <div className="header">
-      <h1>GixDocs</h1>
+      <h1>FaleMais</h1>
       <div className="menu">
         <div className="menu__button">
-          <p>Home</p>
+          <p>Inicio</p>
         </div>
         <div className="menu__button menu__button--selected">
-          <p>Pricing</p>
+          <p>Planos</p>
         </div>
         <div className="menu__button">
-          <p>About us</p>
+          <p>Sobre nós</p>
         </div>
         <div className="menu__login">
           <Icon path={mdiAccountOutline} />
           <p>Login</p>
         </div>
         <div className="menu__getstarted">
-          <p>Get Started</p>
+          <p>Não possuo cadastro</p>
         </div>
       </div>
       <div className="hamburguer">

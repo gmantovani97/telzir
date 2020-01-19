@@ -1,13 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import Icon from '@mdi/react';
-import { mdiCheckBold, mdiClose, mdiSeal } from '@mdi/js';
+import { mdiCheckBold, mdiSeal } from '@mdi/js';
 
 import './styles.scss';
 
 export default function Card({ data }) {
-  const { id, priceWithDiscount, best, image, name } = data;
+  const {
+    id,
+    priceWithDiscount,
+    best,
+    image,
+    name,
+    maximumTime,
+    priceWithoutDiscount,
+  } = data;
 
   return (
     <div className={`card ${best && 'card--best'}`}>
@@ -27,37 +35,19 @@ export default function Card({ data }) {
             className="section__icon section__icon--include"
             path={mdiCheckBold}
           />
-          <p className="section__text">Ligações locais gratuitas</p>
-        </div>
-        <div className="section__item">
-          <Icon
-            className="section__icon section__icon--include"
-            path={mdiCheckBold}
-          />
-          <p className="section__text">
-            Ligações para mesma operadora sem custo
-          </p>
-        </div>
-        <div className="section__item">
-          <Icon
-            className="section__icon section__icon--exclude"
-            path={mdiClose}
-          />
-          <p className="section__text">
-            Ligações entre 00:00 e 06:00 com 50% de desconto
-          </p>
-        </div>
-        <div className="section__item">
-          <Icon
-            className="section__icon section__icon--exclude"
-            path={mdiClose}
-          />
-          <p className="section__text">
-            Ligações em feriado com 20% de desconto
-          </p>
+          <p className="section__text">{`Fale até ${maximumTime} minutos sem pagar nada`}</p>
         </div>
       </div>
       <div className="price">
+        <div
+          className="price__section"
+          data-testid={`pricewithoutdiscount-${id}`}
+        >
+          <s className="price__number--disabled">
+            {priceWithoutDiscount.replace('.', ',')}
+          </s>
+          <s className="price__text--disabled">/mês</s>
+        </div>
         <div className="price__section" data-testid={`pricewithdiscount-${id}`}>
           <h3 className="price__number">
             {priceWithDiscount.replace('.', ',')}
@@ -81,5 +71,7 @@ Card.propTypes = {
     best: PropTypes.bool.isRequired,
     image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    maximumTime: PropTypes.number.isRequired,
+    priceWithoutDiscount: PropTypes.string.isRequired,
   }).isRequired,
 };

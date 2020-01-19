@@ -6,7 +6,7 @@ exports[`App component matches snapshot 1`] = `
     class="header"
   >
     <h1>
-      GixDocs
+      FaleMais
     </h1>
     <div
       class="menu"
@@ -15,21 +15,21 @@ exports[`App component matches snapshot 1`] = `
         class="menu__button"
       >
         <p>
-          Home
+          Inicio
         </p>
       </div>
       <div
         class="menu__button menu__button--selected"
       >
         <p>
-          Pricing
+          Planos
         </p>
       </div>
       <div
         class="menu__button"
       >
         <p>
-          About us
+          Sobre nós
         </p>
       </div>
       <div
@@ -51,7 +51,7 @@ exports[`App component matches snapshot 1`] = `
         class="menu__getstarted"
       >
         <p>
-          Get Started
+          Não possuo cadastro
         </p>
       </div>
     </div>
@@ -235,67 +235,28 @@ exports[`App component matches snapshot 1`] = `
             <p
               class="section__text"
             >
-              Ligações locais gratuitas
-            </p>
-          </div>
-          <div
-            class="section__item"
-          >
-            <svg
-              class="section__icon section__icon--include"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"
-              />
-            </svg>
-            <p
-              class="section__text"
-            >
-              Ligações para mesma operadora sem custo
-            </p>
-          </div>
-          <div
-            class="section__item"
-          >
-            <svg
-              class="section__icon section__icon--exclude"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
-              />
-            </svg>
-            <p
-              class="section__text"
-            >
-              Ligações entre 00:00 e 06:00 com 50% de desconto
-            </p>
-          </div>
-          <div
-            class="section__item"
-          >
-            <svg
-              class="section__icon section__icon--exclude"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
-              />
-            </svg>
-            <p
-              class="section__text"
-            >
-              Ligações em feriado com 20% de desconto
+              Fale até 30 minutos sem pagar nada
             </p>
           </div>
         </div>
         <div
           class="price"
         >
+          <div
+            class="price__section"
+            data-testid="pricewithoutdiscount-1"
+          >
+            <s
+              class="price__number--disabled"
+            >
+              38,00
+            </s>
+            <s
+              class="price__text--disabled"
+            >
+              /mês
+            </s>
+          </div>
           <div
             class="price__section"
             data-testid="pricewithdiscount-1"
@@ -357,67 +318,28 @@ exports[`App component matches snapshot 1`] = `
             <p
               class="section__text"
             >
-              Ligações locais gratuitas
-            </p>
-          </div>
-          <div
-            class="section__item"
-          >
-            <svg
-              class="section__icon section__icon--include"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"
-              />
-            </svg>
-            <p
-              class="section__text"
-            >
-              Ligações para mesma operadora sem custo
-            </p>
-          </div>
-          <div
-            class="section__item"
-          >
-            <svg
-              class="section__icon section__icon--exclude"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
-              />
-            </svg>
-            <p
-              class="section__text"
-            >
-              Ligações entre 00:00 e 06:00 com 50% de desconto
-            </p>
-          </div>
-          <div
-            class="section__item"
-          >
-            <svg
-              class="section__icon section__icon--exclude"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
-              />
-            </svg>
-            <p
-              class="section__text"
-            >
-              Ligações em feriado com 20% de desconto
+              Fale até 60 minutos sem pagar nada
             </p>
           </div>
         </div>
         <div
           class="price"
         >
+          <div
+            class="price__section"
+            data-testid="pricewithoutdiscount-2"
+          >
+            <s
+              class="price__number--disabled"
+            >
+              38,00
+            </s>
+            <s
+              class="price__text--disabled"
+            >
+              /mês
+            </s>
+          </div>
           <div
             class="price__section"
             data-testid="pricewithdiscount-2"
@@ -479,67 +401,28 @@ exports[`App component matches snapshot 1`] = `
             <p
               class="section__text"
             >
-              Ligações locais gratuitas
-            </p>
-          </div>
-          <div
-            class="section__item"
-          >
-            <svg
-              class="section__icon section__icon--include"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"
-              />
-            </svg>
-            <p
-              class="section__text"
-            >
-              Ligações para mesma operadora sem custo
-            </p>
-          </div>
-          <div
-            class="section__item"
-          >
-            <svg
-              class="section__icon section__icon--exclude"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
-              />
-            </svg>
-            <p
-              class="section__text"
-            >
-              Ligações entre 00:00 e 06:00 com 50% de desconto
-            </p>
-          </div>
-          <div
-            class="section__item"
-          >
-            <svg
-              class="section__icon section__icon--exclude"
-              role="presentation"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
-              />
-            </svg>
-            <p
-              class="section__text"
-            >
-              Ligações em feriado com 20% de desconto
+              Fale até 120 minutos sem pagar nada
             </p>
           </div>
         </div>
         <div
           class="price"
         >
+          <div
+            class="price__section"
+            data-testid="pricewithoutdiscount-3"
+          >
+            <s
+              class="price__number--disabled"
+            >
+              38,00
+            </s>
+            <s
+              class="price__text--disabled"
+            >
+              /mês
+            </s>
+          </div>
           <div
             class="price__section"
             data-testid="pricewithdiscount-3"

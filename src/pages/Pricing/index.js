@@ -31,7 +31,7 @@ export default function Pricing() {
       return prices[Number(`1116`)];
     }
     return prices[Number(`${originValue}${destinationValue}`)];
-  }, [originValue, destinationValue]);
+  }, [originValue, destinationValue, prices]);
 
   const values = useMemo(() => {
     const array = [

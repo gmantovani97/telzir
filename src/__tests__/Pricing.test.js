@@ -8,7 +8,7 @@ describe('Pricing component', () => {
     expect(asFragment()).toMatchSnapshot();
   });
   it('should calculate value of plans when minutes input change', () => {
-    const { getByTestId, getByText } = render(<Pricing />);
+    const { getByTestId, getByText, getAllByText } = render(<Pricing />);
 
     const input = getByTestId('minutes-input');
     const originSelect = getByTestId('origin-select');
